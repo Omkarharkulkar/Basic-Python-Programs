@@ -1,0 +1,31 @@
+# Write Python class for bank customer with withdraw and deposit operations 
+# (use inheritance (Introduce class, object concepts)
+
+class Bank_Account:
+    def __init__(self):
+        self.balance=0
+        print("Welcome to MIT Bank!!\nThe Deposit & Withdrawal Machine")
+
+    def deposit(self):
+        amount = float(input("\nEnter amount to be Deposited: Rs."))
+        self.balance += amount
+        print("\nAmount Deposited: Rs.",amount)
+
+    def withdraw(self):
+        amount = float(input("Enter amount to be Withdrawn: Rs."))
+        if self.balance >= amount:
+            self.balance -= amount
+            print("\nAmount Withdrew: Rs.", amount)
+        else:
+            print("\nNot Enough balance!!")
+
+    def display(self):
+        print("\nNet Balance: Rs.",self.balance)
+
+# creating an object of class
+s = Bank_Account()
+
+# Calling functions with that class object
+s.deposit()
+s.withdraw()
+s.display()
